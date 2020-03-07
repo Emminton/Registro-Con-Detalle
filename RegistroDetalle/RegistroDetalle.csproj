@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartWorkingDirectory>$(MSBuildProjectDirectory)</StartWorkingDirectory>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="1486564399-close_81512.png" />
+    <None Remove="business_application_addmale_useradd_insert_add_user_client_2312.png" />
+    <None Remove="delete_delete_deleteusers_delete_male_user_maleclient_2348.png" />
+    <None Remove="Detective_icon-icons.com_54187.png" />
+    <None Remove="save_icon-icons.com_53618.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UI\Consultas\" />
+    <Folder Include="UI\Regitros\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameWorkCore.SqLite" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameWorkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1486564399-close_81512.png" />
+    <Resource Include="business_application_addmale_useradd_insert_add_user_client_2312.png" />
+    <Resource Include="delete_delete_deleteusers_delete_male_user_maleclient_2348.png" />
+    <Resource Include="Detective_icon-icons.com_54187.png" />
+    <Resource Include="save_icon-icons.com_53618.png" />
+  </ItemGroup>
+
+</Project>

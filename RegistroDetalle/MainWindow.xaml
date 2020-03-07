@@ -1,0 +1,108 @@
+﻿<Window x:Class="RegistroDetalle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroDetalle"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="750">
+    <Grid Height="732" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="258*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29.96"/>
+            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="52*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="142*"/>
+            <ColumnDefinition Width="65*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="PersonaId:" HorizontalAlignment="Left" Margin="3,7,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="1" Grid.Row="1"/>
+        <TextBox x:Name="PersonaIdTex" HorizontalAlignment="Left" Margin="1,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Height="26" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="1"/>
+
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="3,6,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="1" Grid.Row="2"/>
+        <TextBox x:Name="NombreTex" HorizontalAlignment="Left" Margin="1,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="545" Height="26" Grid.ColumnSpan="7" Grid.Column="2" Grid.Row="2" TextChanged="NombreTex_TextChanged"/>
+
+        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="DireccionTex" HorizontalAlignment="Left" Margin="1,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="545" Height="26" Grid.ColumnSpan="7" Grid.Column="2" Grid.Row="3"/>
+
+        <Label Content="Cédula:" HorizontalAlignment="Left" Margin="3,6,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Grid.Column="1" Grid.Row="4"/>
+        <TextBox x:Name="CedulaTex" HorizontalAlignment="Left" Margin="1,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="26" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="4"/>
+
+        <Label Content="F.Nacimiento:" HorizontalAlignment="Left" Margin="27,7,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="4"/>
+        <DatePicker x:Name="FechaNacimientoDataPike" HorizontalAlignment="Left" Margin="51,7,0,0" VerticalAlignment="Top" Width="236" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Grid.Column="6" Grid.Row="4"/>
+
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.401,1.325" Height="26" FontSize="14" FontWeight="Bold" Grid.Column="1" Grid.Row="5"/>
+        <TextBox x:Name="TelefonoTex" HorizontalAlignment="Left" Margin="1,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="26" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="5"/>
+
+        <Label Content="Tipo:" HorizontalAlignment="Left" Margin="27,1,0,0" VerticalAlignment="Top" Height="26" Width="41" FontSize="14" FontWeight="Bold" Grid.Column="5" Grid.Row="5"/>
+        <TextBox x:Name="TipoTex" HorizontalAlignment="Left" Margin="4,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Height="26" Grid.ColumnSpan="3" Grid.Column="6" Grid.Row="5"/>
+        
+
+        <Button x:Name="AgregarTipoButton" Content="Agregar Tipo" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" Height="39" Width="97" FontSize="14" FontWeight="Bold" Click="AgregarTipoButton_Click" Grid.Column="8" Grid.Row="5" >
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+
+        <GroupBox Header="Agenda Teléfono:" Margin="28,41,0,16" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="9" Grid.RowSpan="5" Grid.Row="4">
+            <DataGrid x:Name="DetalleDataGrid" Height="243" Margin="10,0,16,0" RenderTransformOrigin="0.5,0.5">
+                <DataGrid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.561"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-1.19"/>
+                    </TransformGroup>
+                </DataGrid.RenderTransform>
+            </DataGrid>
+        </GroupBox>
+
+        <Button x:Name="RemoverFilaButton" Content="      Remover Fila" HorizontalAlignment="Left" Margin="14,3,0,0" VerticalAlignment="Top" Width="131" Height="31" FontSize="14" FontWeight="Bold" Click="RemoverFilaButton_Click" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="1486564399-close_81512.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="BuscarButton" Content="    Buscar" HorizontalAlignment="Center" VerticalAlignment="Top" Width="140" Height="43" FontSize="14" FontWeight="Bold" Click="BuscarButton_Click" Grid.Column="8" Margin="0,8,0,0" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Detective_icon-icons.com_54187.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="NuevoButton" Content="             Nuevo" HorizontalAlignment="Left" Margin="28,0,0,0" VerticalAlignment="Center" Width="147" Height="73" FontSize="14" FontWeight="Bold" Click="NuevoButton_Click" Grid.ColumnSpan="3" Grid.Row="9">
+            <Button.Background>
+                <ImageBrush ImageSource="business_application_addmale_useradd_insert_add_user_client_2312.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="GuardarButton" Content="                 Guardar" HorizontalAlignment="Left" Margin="72,0,0,0" VerticalAlignment="Center" Height="73" Width="147" FontSize="14" FontWeight="Bold" Click="GuardarButton_Click" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="9">
+            <Button.Background>
+                <ImageBrush ImageSource="save_icon-icons.com_53618.png" AlignmentX="Left"  Stretch="Uniform" TileMode="None"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="EliminarButton" Content="                  Eliminar" HorizontalAlignment="Left" Margin="87,0,0,0" VerticalAlignment="Center" Width="147" Height="73" FontSize="14" FontWeight="Bold" Click="EliminarButton_Click" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="9">
+            <Button.Background>
+                <ImageBrush ImageSource="delete_delete_deleteusers_delete_male_user_maleclient_2348.png" AlignmentX="Left" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
